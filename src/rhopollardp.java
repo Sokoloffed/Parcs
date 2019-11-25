@@ -1,7 +1,7 @@
 import java.io.*;
 import parcs.*;
 import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.ArrayList.*;
 import java.util.List;
 import java.math.*;
 
