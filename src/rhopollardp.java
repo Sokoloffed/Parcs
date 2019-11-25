@@ -12,8 +12,6 @@ public class RhoPollardP implements AM {
         (new RhoPollardP()).run(new AMInfo(curtask, (channel)null));
         curtask.end();
         // TODO: Modified name
-
-
         // TODO: More attempts
 
     }
