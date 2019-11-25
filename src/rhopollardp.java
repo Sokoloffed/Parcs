@@ -2,6 +2,7 @@ import java.io.*;
 import parcs.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.List;
 
 public class RhoPollardP implements AM {
 
@@ -12,13 +13,16 @@ public class RhoPollardP implements AM {
         curtask.end();
         // TODO: Modified name
 
+
+        // TODO: More attempts
+
     }
 
     public void run(AMInfo info) {
       BigInteger n;
       try {
           System.out.print("Enter n: ");
-          canner sc = new Scanner(System.in);
+          Scanner sc = new Scanner(System.in);
 	  n = sc.nextBigInteger();
 
       } catch (IOException e) {e.printStackTrace(); return;}
