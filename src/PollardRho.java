@@ -34,7 +34,7 @@ public class PollardRho implements AM{
     public void run(AMInfo info){
         BigInteger n;
 	ArrayList<BigInteger> r = new ArrayList<BigInteger>();
-        n = BigInteger(info.parent.readObject().toString());
+        n =  (BigInteger)(info.parent.readObject().toString());
 
         if (n.isProbablePrime(1) || n.compareTo(ONE) == 0) r.add(n);
 	else
@@ -51,8 +51,8 @@ public class PollardRho implements AM{
             p2.execute("PollardRho");
             c2.write(n.divide(divisor).toString());
 
-            ArrayList<BigInteger> r1 = ArrayList<BigInteger>(c1.readObject());
- 	    ArrayList<BigInteger> r1 = ArrayList<BigInteger>(c1.readObject());
+            ArrayList<BigInteger> r1 = new ArrayList<BigInteger>(c1.readObject());
+ 	    ArrayList<BigInteger> r1 = new ArrayList<BigInteger>(c1.readObject());
 
             r.addAll(r1);
 	    r.addAll(r2);

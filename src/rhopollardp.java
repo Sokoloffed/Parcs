@@ -1,7 +1,7 @@
 import java.io.*;
 import parcs.*;
 import java.util.Scanner;
-import java.util.ArrayList.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.math.*;
 
@@ -32,7 +32,7 @@ public class RhoPollardP implements AM {
       c1.write(n.toString());
 
       System.out.println("Waiting for result...");
-      ArrayList<BigInteger> r = ArrayList<BigInteger>(c1.readLong());
+      ArrayList<BigInteger> r = new ArrayList<BigInteger>(c1.readLong());
       System.out.println("Result found.");
 
       System.out.println(Arrays.toString(r));
