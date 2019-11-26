@@ -2,7 +2,9 @@ import parcs.*;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList.*;
+import java.util.ArrayList;
 import java.math.*;
+import java.io.*;
 
 
 public class PollardRho implements AM{
@@ -32,9 +34,9 @@ public class PollardRho implements AM{
     }
 
     public void run(AMInfo info){
-        BigInteger n;
-	ArrayList<BigInteger> r = new ArrayList<BigInteger>();
-        n =  (BigInteger)(info.parent.readObject().toString());
+        BigInteger n = new BigInteger();
+	    ArrayList<BigInteger> r = new ArrayList<BigInteger>();
+        n = new BigInteger(info.parent.readObject().toString(()));  // (BigInteger) // (info.parent.readObject().toString());
 
         if (n.isProbablePrime(1) || n.compareTo(ONE) == 0) r.add(n);
 	else
@@ -50,12 +52,11 @@ public class PollardRho implements AM{
             channel c2 = p2.createChannel();
             p2.execute("PollardRho");
             c2.write(n.divide(divisor).toString());
-            // FUcking fuck
-            ArrayList<BigInteger> r1 = new ArrayList<BigInteger>((int)c1.readObject());
- 	    ArrayList<BigInteger> r1 = new ArrayList<BigInteger>((int)c1.readObject());
+            ArrayList<BigInteger> r1 = new ArrayList<BigInteger>();//((int)c1.readObject());
+ 	        ArrayList<BigInteger> r2 = new ArrayList<BigInteger>();//((int)c1.readObject());
 
             r.addAll(r1);
-	    r.addAll(r2);
+	        r.addAll(r2);
         }
         info.parent.write(r);
     }
