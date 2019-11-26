@@ -50,7 +50,7 @@ public class PollardRho implements AM{
             channel c2 = p2.createChannel();
             p2.execute("PollardRho");
             c2.write(n.divide(divisor).toString());
-
+            // FUcking fuck
             ArrayList<BigInteger> r1 = new ArrayList<BigInteger>((int)c1.readObject());
  	    ArrayList<BigInteger> r1 = new ArrayList<BigInteger>((int)c1.readObject());
 
