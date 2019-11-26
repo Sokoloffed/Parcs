@@ -35,6 +35,7 @@ public class RhoPollardP implements AM {
       c1.write(n.toString());
 
       System.out.println("Waiting for result...");
+      System.out.println("C1: " + c1.readLong());
       ArrayList<BigInteger> r = new ArrayList<BigInteger>((int)c1.readLong());
       System.out.println("Result found.");
     for (BigInteger b : r) {
