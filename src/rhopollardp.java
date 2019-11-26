@@ -21,8 +21,8 @@ public class RhoPollardP implements AM {
     public void run(AMInfo info) {
       BigInteger n;
       System.out.print("Enter n: ");
-        Scanner sc = new Scanner(System.in);
-	  n = sc.nextBigInteger();
+     Scanner sc = new Scanner(System.in);
+	  n = sc.hasNextBigInteger();
       System.out.println("N is: " + n);
     //   try {
           
