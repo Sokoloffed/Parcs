@@ -23,12 +23,8 @@ public class RhoPollardP implements AM {
      Scanner sc = new Scanner(System.in);
 	  BigInteger n = sc.nextBigInteger();
       System.out.println("N is: " + n);
-    //   try {
-          
-
-    //   } catch (IOException e) {e.printStackTrace(); return;}
-
-      point p1 = info.createPoint();
+      try {
+          point p1 = info.createPoint();
             System.out.println("Point p1 is: " + n);
       channel c1 = p1.createChannel();
             System.out.println("Channel c1 is: " + n);
@@ -45,6 +41,8 @@ public class RhoPollardP implements AM {
     for (BigInteger b : r) {
         System.out.println(b.toString(10));
     }
+      } catch (IOException e) {e.printStackTrace(); return;}
+
       
     }
 }
