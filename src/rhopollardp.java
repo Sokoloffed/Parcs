@@ -41,7 +41,7 @@ public class RhoPollardP implements AM {
     for (BigInteger b : r) {
         System.out.println(b.toString(10));
     }
-      } catch (IOException e) {e.printStackTrace(); return;}
+      } catch (Exception e) {e.printStackTrace(); return;}
 
       
     }
