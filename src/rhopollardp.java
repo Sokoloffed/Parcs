@@ -28,7 +28,8 @@ public class RhoPollardP implements AM {
 
       point p1 = info.createPoint();
       channel c1 = p1.createChannel();
-      p1.execute("RhoPollard");
+      // Used to be RhoPollard
+      p1.execute("PollardRho");
       c1.write(n.toString());
 
       System.out.println("Waiting for result...");
