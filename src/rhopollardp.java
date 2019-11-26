@@ -23,14 +23,19 @@ public class RhoPollardP implements AM {
       System.out.print("Enter n: ");
         Scanner sc = new Scanner(System.in);
 	  n = sc.nextBigInteger();
+      System.out.println("N is: " + n);
     //   try {
           
 
     //   } catch (IOException e) {e.printStackTrace(); return;}
 
       point p1 = info.createPoint();
+            System.out.println("Point p1 is: " + n);
       channel c1 = p1.createChannel();
+            System.out.println("Channel c1 is: " + n);
+
       // Used to be RhoPollard
+
       p1.execute("PollardRho");
       c1.write(n.toString());
 

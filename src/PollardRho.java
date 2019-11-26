@@ -34,7 +34,7 @@ public class PollardRho implements AM{
     }
 
     public void run(AMInfo info){
-        // BigInteger n = new BigInteger();
+        System.out.println("Info is: " + info);
 	    ArrayList<BigInteger> r = new ArrayList<BigInteger>();
         String obj = info.parent.readObject().toString();
         BigInteger n = new BigInteger(obj);  // (BigInteger) // (info.parent.readObject().toString());
