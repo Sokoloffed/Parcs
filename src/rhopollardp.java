@@ -20,12 +20,13 @@ public class RhoPollardP implements AM {
 
     public void run(AMInfo info) {
       BigInteger n;
-      try {
-          System.out.print("Enter n: ");
-          Scanner sc = new Scanner(System.in);
+      System.out.print("Enter n: ");
+        Scanner sc = new Scanner(System.in);
 	  n = sc.nextBigInteger();
+    //   try {
+          
 
-      } catch (IOException e) {e.printStackTrace(); return;}
+    //   } catch (IOException e) {e.printStackTrace(); return;}
 
       point p1 = info.createPoint();
       channel c1 = p1.createChannel();
