@@ -34,10 +34,10 @@ public class PollardRho implements AM{
     }
 
     public void run(AMInfo info){
-        BigInteger n = new BigInteger();
+        // BigInteger n = new BigInteger();
 	    ArrayList<BigInteger> r = new ArrayList<BigInteger>();
         String obj = info.parent.readObject().toString();
-        n = new BigInteger(obj);  // (BigInteger) // (info.parent.readObject().toString());
+        BigInteger n = new BigInteger(obj);  // (BigInteger) // (info.parent.readObject().toString());
 
         if (n.isProbablePrime(1) || n.compareTo(ONE) == 0) r.add(n);
 	else
