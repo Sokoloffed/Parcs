@@ -54,8 +54,8 @@ public class PollardRho implements AM{
             channel c2 = p2.createChannel();
             p2.execute("PollardRho");
             c2.write(n.divide(divisor).toString());
-            // ArrayList<BigInteger> r1 = new ArrayList<BigInteger>(c1.readObject());//((int));
- 	        // ArrayList<BigInteger> r2 = new ArrayList<BigInteger>(c1.readObject());//((int)c1.readObject());
+            ArrayList<BigInteger> r1 = ( ArrayList<BigInteger> ) (c1.readObject());//((int));
+ 	        ArrayList<BigInteger> r2 = ( ArrayList<BigInteger> )(c2.readObject());//((int)c1.readObject());
             String c1Str = c1.readObject().toString();
             String c2Str = c2.readObject().toString();
             System.out.println("C1 object: " +  c1Str );
@@ -67,8 +67,8 @@ public class PollardRho implements AM{
             // r.add(b1);
             // r.add(b2);
             
-            // r.addAll(r1);
-	        // r.addAll(r2);
+            r.addAll(r1);
+	        r.addAll(r2);
         }
         info.parent.write(r);
     }
