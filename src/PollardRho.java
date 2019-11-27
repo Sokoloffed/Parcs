@@ -43,7 +43,7 @@ public class PollardRho implements AM{
         String obj = info.parent.readObject().toString();
         BigInteger n = new BigInteger(obj);  // (BigInteger) // (info.parent.readObject().toString());
 
-        if (n.isProbablePrime(1) || n.compareTo(ONE) == 0) r.add(n);
+        if (n.isProbablePrime(1) || n.compareTo(ONE) == 0) result.add(n);
 	else
 	{ 
 	    BigInteger divisor = rho(n);
