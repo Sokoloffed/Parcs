@@ -58,7 +58,7 @@ public class PollardRho implements AM{
  	        // ArrayList<BigInteger> r2 = new ArrayList<BigInteger>(c1.readObject());//((int)c1.readObject());
             String c1Str = c1.readObject().toString();
             String c2Str = c2.readObject().toString();
-            System.out.println("C1 object: " +  c1Str) );
+            System.out.println("C1 object: " +  c1Str );
             System.out.println("C2 object: " +  c2Str);
             // BigInteger b1 = new BigInteger(c1Str);
             // BigInteger b2 = new BigInteger(c2Str);
