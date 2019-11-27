@@ -13,8 +13,6 @@ public class RhoPollardP implements AM {
         curtask.addJarFile("RhoPollardP.jar");
         (new RhoPollardP()).run(new AMInfo(curtask, (channel)null));
         curtask.end();
-        // TODO: Modified name
-        // TODO: More attempts
 
     }
 
