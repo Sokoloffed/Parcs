@@ -36,7 +36,7 @@ public class PollardRho implements AM{
 
     public void run(AMInfo info){
         System.out.println("Info is: " + info);
-	    ArrayList<BigInteger> r = new ArrayList<BigInteger>();
+	    Result result = new Result();
         String obj = info.parent.readObject().toString();
         BigInteger n = new BigInteger(obj);  // (BigInteger) // (info.parent.readObject().toString());
 
@@ -54,12 +54,23 @@ public class PollardRho implements AM{
             channel c2 = p2.createChannel();
             p2.execute("PollardRho");
             c2.write(n.divide(divisor).toString());
-            ArrayList<BigInteger> r1 = ( ArrayList<BigInteger> ) (c1.readObject());//((int));
- 	        ArrayList<BigInteger> r2 = ( ArrayList<BigInteger> )(c2.readObject());//((int)c1.readObject());
-            String c1Str = c1.readObject().toString();
-            String c2Str = c2.readObject().toString();
-            System.out.println("C1 object: " +  c1Str );
-            System.out.println("C2 object: " +  c2Str);
+            Result r1 = (Result) (c1.readObject());
+            Result r2 = (Result) (c2.readObject());
+            // ArrayList<BigInteger> r1 = ( ArrayList<BigInteger> ) (c1.readObject());//((int));
+ 	        // ArrayList<BigInteger> r2 = ( ArrayList<BigInteger> )(c2.readObject());//((int)c1.readObject());
+            // String c1Str = c1.readObject().toString();
+            // String c2Str = c2.readObject().toString();
+            System.out.println("C1 object: "  );
+            for (BigInteger bi: r1.getList()) {
+                System.out.print(bi + " ");
+            }
+            System.out.println(" ");
+            System.out.println("C2 object: "  );
+            for (BigInteger bi: r2.getList()) {
+                System.out.print(bi + " ");
+            }
+            System.out.println(" ");
+
             // BigInteger b1 = new BigInteger(c1Str);
             // BigInteger b2 = new BigInteger(c2Str);
             // System.out.println("B1 : " + b1);
@@ -67,8 +78,10 @@ public class PollardRho implements AM{
             // r.add(b1);
             // r.add(b2);
             
-            r.addAll(r1);
-	        r.addAll(r2);
+            for (BigInteger bi : r1.getList())
+                result.add(bi);
+            for (BigInteger bi : r2.getList())
+                result.add(bi);
         }
         info.parent.write(r);
     }
