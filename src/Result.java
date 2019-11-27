@@ -1,5 +1,3 @@
-package com.company;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.ArrayList;
