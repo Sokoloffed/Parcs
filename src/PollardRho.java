@@ -15,7 +15,7 @@ public class PollardRho implements AM{
 
 
     public static BigInteger rho(BigInteger N) {
-        System.out.println("Hello from Rho", N);
+        System.out.println("Hello from Rho" + N);
         BigInteger divisor;
         BigInteger c  = new BigInteger(N.bitLength(), random);
         BigInteger x  = new BigInteger(N.bitLength(), random);
