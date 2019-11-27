@@ -56,9 +56,14 @@ public class PollardRho implements AM{
             c2.write(n.divide(divisor).toString());
             ArrayList<BigInteger> r1 = new ArrayList<BigInteger>();//((int)c1.readObject());
  	        ArrayList<BigInteger> r2 = new ArrayList<BigInteger>();//((int)c1.readObject());
-
-            r.addAll(r1);
-	        r.addAll(r2);
+            String c1Str = c1.readObject().toString();
+            String c2Str = c2.readObject().toString();
+            r.add(new BigInteger(c1Str));
+            r.add(new BigInteger(c2Str));
+            System.out.println("C1 object: " + c1Str);
+            System.out.println("C2 object: " + c2Str);
+            // r.addAll(r1);
+	        // r.addAll(r2);
         }
         info.parent.write(r);
     }
