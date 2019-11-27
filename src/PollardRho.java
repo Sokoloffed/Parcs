@@ -30,7 +30,7 @@ public class PollardRho implements AM{
             xx = xx.multiply(xx).mod(N).add(c).mod(N);
             divisor = x.subtract(xx).gcd(N);
         } while((divisor.compareTo(ONE)) == 0);
-
+        System.out.println("Divisor: " + divisor);
         return divisor;
     }
 
@@ -54,16 +54,16 @@ public class PollardRho implements AM{
             channel c2 = p2.createChannel();
             p2.execute("PollardRho");
             c2.write(n.divide(divisor).toString());
-            ArrayList<BigInteger> r1 = new ArrayList<BigInteger>(c1.readObject());//((int));
- 	        ArrayList<BigInteger> r2 = new ArrayList<BigInteger>(c1.readObject());//((int)c1.readObject());
+            // ArrayList<BigInteger> r1 = new ArrayList<BigInteger>(c1.readObject());//((int));
+ 	        // ArrayList<BigInteger> r2 = new ArrayList<BigInteger>(c1.readObject());//((int)c1.readObject());
             String c1Str = c1.readObject().toString();
             String c2Str = c2.readObject().toString();
             System.out.println("C1 object: " + ((String) c1Str) );
             System.out.println("C2 object: " + c2Str);
-            BigInteger b1 = new BigInteger(c1Str);
-            BigInteger b2 = new BigInteger(c2Str);
-            System.out.println("B1 : " + b1);
-            System.out.println("B2 : " + b2);
+            // BigInteger b1 = new BigInteger(c1Str);
+            // BigInteger b2 = new BigInteger(c2Str);
+            // System.out.println("B1 : " + b1);
+            // System.out.println("B2 : " + b2);
             // r.add(b1);
             // r.add(b2);
             
