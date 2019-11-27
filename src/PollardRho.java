@@ -21,6 +21,9 @@ public class PollardRho implements AM{
         BigInteger x  = new BigInteger(N.bitLength(), random);
         BigInteger xx = x;
 
+
+
+
         // check divisibility by 2
         if (N.mod(TWO).compareTo(ZERO) == 1) return TWO;
 
