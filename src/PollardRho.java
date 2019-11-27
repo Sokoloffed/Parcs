@@ -25,7 +25,10 @@ public class PollardRho implements AM{
 
 
         // check divisibility by 2
-        if (N.mod(TWO).compareTo(ZERO) == 1) return TWO;
+        if (N.mod(TWO).compareTo(ZERO) == 1) {
+          System.out.println("2 divisor: " + N);
+          return TWO;  
+        } 
 
         do {
             x  =  x.multiply(x).mod(N).add(c).mod(N);
