@@ -25,7 +25,7 @@ public class PollardRho implements AM{
 
 
         // check divisibility by 2
-        if (N.mod(TWO).compareTo(ZERO) == 1) {
+        if (N.mod(TWO).compareTo(ZERO) == 0) {
           System.out.println("2 divisor: " + N);
           return TWO;  
         } 
@@ -35,7 +35,7 @@ public class PollardRho implements AM{
             xx = xx.multiply(xx).mod(N).add(c).mod(N);
             xx = xx.multiply(xx).mod(N).add(c).mod(N);
             divisor = x.subtract(xx).gcd(N);
-        } while((divisor.compareTo(ONE)) == 0 || (divisor.compareTo(TWO)) == 0);
+        } while((divisor.compareTo(ONE)) == 0);
         System.out.println("Divisor: " + divisor);
         return divisor;
     }
@@ -46,7 +46,7 @@ public class PollardRho implements AM{
         String obj = info.parent.readObject().toString();
         BigInteger n = new BigInteger(obj);  // (BigInteger) // (info.parent.readObject().toString());
 
-        if (n.isProbablePrime(1) || n.compareTo(ONE) == 0 || n.compareTo(TWO) == 0) result.add(n);
+        if (n.isProbablePrime(1) || n.compareTo(ONE) == 0) result.add(n);
 	else
 	{ 
 	    BigInteger divisor = rho(n);
