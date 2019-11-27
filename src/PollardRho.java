@@ -86,6 +86,6 @@ public class PollardRho implements AM{
             for (BigInteger bi : r2.getList())
                 result.add(bi);
         }
-        info.parent.write(r);
+        info.parent.write(result);
     }
 }
