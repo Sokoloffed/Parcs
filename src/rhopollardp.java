@@ -10,7 +10,7 @@ public class RhoPollardP implements AM {
 
     public static void main(String[] args) {
         task curtask = new task();
-        curtask.addJarFile("RhoPollardP.jar");
+        curtask.addJarFile("PollardRho.jar");
         (new RhoPollardP()).run(new AMInfo(curtask, (channel)null));
         curtask.end();
 
